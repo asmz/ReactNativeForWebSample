@@ -27,5 +27,9 @@ module.exports = {
       // Webpackビルドでは'react-native'は'react-native-web'として名前解決
       'react-native': 'react-native-web'
     }
+  },
+  devServer: {
+    port: 8888,
+    contentBase: path.resolve(appDirectory, 'webroot')
   }
 }
