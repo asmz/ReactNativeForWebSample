@@ -2,12 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>React Native for Web Test</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- PWA meta for apple -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RNFW Test">
+    <link rel="apple-touch-icon" href="images/icon.png">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
     <!-- アプリ展開先 -->
     <div id="root"></div>
     <!-- WebpackでビルドされたJS読み込み -->
     <script type="text/javascript" src="bundle.web.js"></script>
+    <!-- Service worker登録 -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then((register) => {
+            console.log('Service worker registoration success. scope:', register.scope);
+          }).catch((error) => {
+            console.log('Service worker registoration failure. error:', error);
+          });
+      }
+    </script>
   </body>
 </html>
