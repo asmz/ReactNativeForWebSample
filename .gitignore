@@ -59,4 +59,4 @@ buck-out/
 /ios/Pods/
 
 # React Native for Web
-webroot/bundle.web.js
+docs/bundle.web.js

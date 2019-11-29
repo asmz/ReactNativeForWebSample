@@ -4,11 +4,12 @@ const webpack = require('webpack');
 const appDirectory = path.resolve(__dirname, './');
 
 module.exports = {
+  mode: 'production',
   entry: path.resolve(appDirectory, 'index.web.js'),  // エントリとなるJS
   output: {
-    // 最終的に webroot/bundle.web.js に出力
+    // 最終的に docs/bundle.web.js に出力
     filename: 'bundle.web.js',
-    path: path.resolve(appDirectory, 'webroot')
+    path: path.resolve(appDirectory, 'docs')
   },
   module: {
     rules: [
@@ -30,6 +31,6 @@ module.exports = {
   },
   devServer: {
     port: 8888,
-    contentBase: path.resolve(appDirectory, 'webroot')
+    contentBase: path.resolve(appDirectory, 'docs')
   }
 }
