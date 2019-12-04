@@ -6,6 +6,8 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
+    "build:web": "./node_modules/webpack-cli/bin/cli.js",
+    "start:web": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "jest",
     "lint": "eslint ."
   },
